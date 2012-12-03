@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<assembly>
+	<id>installer</id>
+	<formats>
+	  <!-- formato de salida del empaquetado -->
+		<format>zip</format>
+	</formats>
+	
+	<!-- no queremos que el empaquetado tenga como raíz un directorio con el nombre del módulo batch -->
+	<includeBaseDirectory>false</includeBaseDirectory>
+	
+	<!-- las dependencias del módulo (las librerías) se incluirán en un directorio /lib-->
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>/lib</outputDirectory>
+			<scope>runtime</scope>
+            <excludes>  
+                <exclude>${groupId}:${artifactId}</exclude>  
+            </excludes>  			
+		</dependencySet>
+	</dependencySets>
+	
+	<!-- además el contenido del zip incluirá los siguientes directorios -->
+	<fileSets>
+	  <!-- irá al directorio lib el contenido del directorio target del módulo batch -->
+		<fileSet>
+			<directory>target</directory>
+			<outputDirectory>.</outputDirectory>
+			<!-- a exclusión del empaquetado del javadoc y los fuentes -->
+			<excludes>
+				<exclude>*-source.jar</exclude>
+				<exclude>*-javadoc.jar</exclude>
+			</excludes>
+			<!-- se incluirá la propia librería del módulo batch -->
+			<includes>
+				<include>transformaciones-0.0.1-SNAPSHOT.jar</include>
+			</includes>
+		</fileSet>
+		<!-- los ficheros de configuración de la aplicación deberán estar disponibles también en el entorno del 
+    módulo batch, aunque quizás no se requiera la configuración de todas sus propiedades -->
+		<fileSet>
+			<directory>src/main/config</directory>
+			<outputDirectory>/config</outputDirectory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>
+		
+		<fileSet>
+			<directory>css</directory>
+			<outputDirectory>/css</outputDirectory>
+			<includes>
+				<include>**/*</include>
+			</includes>
+		</fileSet>		
+
+		<!-- para la ejecución de los procesos batch haremos uso de unos ejecutables que invoquen a los métodos main 
+    de las clases que implementen los procesos -->
+		<fileSet>
+			<directory>src/main/scripts</directory>
+			<outputDirectory>/</outputDirectory>
+			<lineEnding>unix</lineEnding>
+			<fileMode>0755</fileMode>
+			<includes>
+				<include>**/*.sh</include>
+			</includes>
+		</fileSet>
+		<!-- Esta operativos pero no se incluyen en la distribucion (Servidores Solaris)-->
+		<fileSet>
+			<directory>src/main/scripts</directory>
+			<outputDirectory></outputDirectory>
+			<lineEnding>dos</lineEnding>
+			<includes>
+				<include>**/*.cmd</include>
+			</includes>
+		</fileSet>
+		 
+    <!-- crearemos un directorio de salida para los logs de los procesos -->
+		<fileSet>
+			<directory>src/main/logs</directory>
+			<outputDirectory>/logs</outputDirectory>
+		</fileSet>
+	</fileSets>
+</assembly>

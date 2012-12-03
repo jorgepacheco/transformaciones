@@ -1,0 +1,987 @@
+/**************************************************************************
+		CAPAS BASICAS DE LA APLICACION
+/*************************************************************************/
+
+
+body {
+  margin: 0%;
+  background-color: white;
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 11px;
+  height:100%;
+  width:100%;
+  position:absolute;  
+}
+
+#contenedor {
+   /*border-color: #33ccff;
+  border-width: 1px;*/
+  /*margin: 0%;*/
+  background-color: white;
+  /*VPS*/
+  /*width: 99%;*/
+  margin: 0 auto;
+  padding: 0;
+  width: 1260px;  
+  height: 99%;
+}
+#header {
+  /* border: 1px solid red; */
+  /* background-position:  center center; */
+  margin-bottom: 0%;
+  width: 100%;
+  height: 70px;
+  background: #e6e6e7 url(../images/bg_cabecera_modificado.png) 0% 100% no-repeat;
+  background-repeat: no-repeat;
+  background-image: url(../images/bg_cabecera.png);
+  -moz-background-size:100% 100%; 
+  -o-background-size:100% 100%; 
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  background-color: #e6e6e7; 
+}
+#subheader {
+   clear: both;
+   overflow: hidden;
+  	background-color: #85B2CB;
+  	/*background-color: #F5F5F5;*/
+    border: 0 none;
+    color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-style: normal;    
+}
+#menu {
+  /* border: 1px solid #3333ff;*/
+	float:left;
+	height:85%;
+	margin: 5px 0px 0px 2px;
+	/*width:18%;*/
+	width: 225px; /*Para que al redimensionar el navegador el menú se mantenga en su tamaño*/
+}
+#content {
+    /* border: 1px solid #33cc00; */ 
+	float:left;
+	height:85%;
+	margin: 5px 10px 10px 10px; 
+	/*width:80%;*/
+	width: 1010px; /*Para que al redimensionar el navegador el contenido mantenga su tamaño*/
+	background-repeat: no-repeat;
+  	background-image: url(../images/EscudoColor.gif);
+  	background-position: center;
+}
+#footer {
+  /* border: 1px solid #9999ff;*/
+  width: 100%;
+  height: 5%;
+  background-color: white;
+  clear: left;
+}
+
+/**
+	Parrafos para filtros
+*/
+
+.estiloOculto {
+
+	visibility: hidden;
+	display: none;
+}
+
+.estiloVisible {
+
+	visibility: visible;
+	display: block;
+
+}
+
+	div.botones {
+		width: 100%;
+		clear: both;
+    	overflow: hidden;
+    	margin-top: 5px;
+	}
+	
+	div.botonesDetalle {
+	    clear: both;
+	    float: right;
+	    margin-top: 20px;
+	    overflow: hidden;
+	    width: 60%;
+	}
+	
+	div.obligatorio {
+		width: 100%;
+		clear: both;
+    	overflow: hidden;
+    	font-size: 0.9em;
+    	font-style:normal;
+	}
+
+	div.fila {
+		width: 100%;
+		clear: both;
+    	overflow: hidden;
+    	margin: 0;
+	}
+
+	div.fila p.tercio{
+		width: 33%;
+		float: left;
+		margin: 0;
+	}
+	
+	div.fila p.tercio2{
+		width: 32%;
+		float: left;
+		margin: 0;
+	}
+	
+	div.fila p.tercioOrg{
+		width: 38%;
+		float: left;
+		margin: 0;
+	}
+	
+	div.fila p.mitad{
+		width: 50%;
+		float: left;
+		margin: 0;
+	}
+	
+	div.fila p.trescuartos{
+		width: 75%;
+		float: left;
+		margin: 0;
+	}		
+	
+	div.fila p.mitad59{
+		width: 59%;
+		float: left;
+		margin: 0;
+	}	
+	
+		div.fila p.todo{
+		width: 100%;
+		float: left;
+		margin: 0;
+	}
+	
+	div.fila p.sexto{
+		width: 16%;
+		float: left;
+		margin: 0;
+	}
+	
+	div.fila p.sexto2{
+		width: 17%;
+		float: left;
+		margin: 0;
+	}
+	
+	div.fila p{
+		float: left;
+		margin: 0;
+	}
+	
+	div.fila p.cuarto{
+		width: 25%;
+		float: left;
+		margin: 0;
+    
+		
+	}
+	
+	div.fila p span{
+		font-size: 0.7em;
+		font-style: normal; 
+		font-weight: normal; 
+	}
+
+	
+	div.fila p.cuartoFecha{
+		width: 24%;
+		float: left;
+		margin: 0;
+	}
+	
+	div.fila p.quinto{
+		width: 19%;
+		float: left;
+		margin: 0;
+	}
+	
+	div.fila p.octavo{
+		width: 12%;
+		float: left;
+		margin: 0;
+	}
+	div.fila p.decimo{
+		width: 10%;
+		float: left;
+		margin: 0;
+	}
+	
+	div.fila p.decimo8{
+		width: 8%;
+		float: left;
+		margin: 0;
+	}	
+	
+	div.fila p.resto{
+		width: 2%;
+		float: left;
+		margin: 0;
+	}
+	div.fila label  {
+		display: block;
+		line-height: 18px;
+		font-size: 11px;
+		font-weight: bold;
+		
+	}
+	
+	div.fila p img{
+		margin-left: 5px;
+	}
+	
+/** SUBHEADER */
+
+div#subheader p.datosSubheader{
+    float: left;
+    margin: 2px 1px 2px 15px;
+    font-weight: bold;
+}
+
+div#subheader p.datosSubheaderRol{
+	text-align: right;  
+    float: right;
+    margin: 2px 15px 2px 1px;
+    font-weight: bold;     
+}
+
+/*div#subheader p.datosSubheader label{
+	   font-weight: bold;
+}
+
+div#subheader p.datosSubheaderRol label{
+	   font-weight: bold;
+}*/
+	/* Estilos para la ventana de Detalle*/ 
+/* Contenedor */
+div.cont {
+	text-align: left;
+	padding: 1px;
+	margin: 0 auto;
+	width: 500px;
+}
+
+/* Sombra */
+div.sombra {
+	margin: 4px;
+	background: #646464; /* Color de la sombra #CCCCCC*/
+	border: solid 1px #646464; /* Color del borde #CCCCCC*/
+	width: 500px;
+}
+
+/* Texto */
+div.text {
+	border: solid 1px #646464; /* #CCCCCC */
+	margin: -2px 1px 1px -2px;
+	/* Márgenes negativos mover el texo y provocar el efecto de sombra*/
+	padding: 2px;
+	background: #FFFFFF; /* Color de fondo */
+	word-wrap  : break-word;
+}
+
+.detalleLabel { /* width: 120px; */
+	float: left;
+	margin: 0px 20px 2px 15px;
+	color: #4F4F4F;
+	font-weight: bold;
+}
+
+.detalleValue {
+	float: left;
+	margin: 20px 0px 20px 0px;
+	color: #4F4F4F;
+	font-weight: bold;
+}
+/* Fin de los estilos para la ventana de Detalle */
+	
+
+.selectPeke{
+
+	width:100px;
+
+}
+
+.selectPekeServicio{
+
+	width:300px;
+
+}
+
+/**
+	FIN FILTROS
+**/
+
+div.row {
+	clear: both;
+	margin: 10px 0;
+	overflow: hidden;
+
+}
+
+div.row p {
+	float: left;
+	margin: 5px 1px 5px 0;
+
+	
+}
+
+div.row p label{
+
+	margin-right: 5px;
+}
+
+div.row p img{
+	margin-left: 5px;
+}
+
+div.row p.cuarto {
+	width: 24%;
+
+}
+
+div.row p.cuarto label{
+
+}
+
+div.row p.tercio {
+	width: 29%;
+}
+div.row p.etiqueta {
+	width: 8%;
+}
+
+div.row p.mitad {
+	width: 49%;
+}
+
+div.row table {
+	margin-top: 20px;
+	margin-left: 170px;
+}
+
+/**
+			Estilos para la Botonera
+*/
+
+div.botonera {
+	clear: both;
+	margin-left: 10px;
+	overflow: hidden;
+
+}
+
+/**
+	Estilos para los check de Roles
+**/
+
+div.rowRoles {
+	clear: both;
+	margin: 10px 75px;
+	overflow: hidden;
+}
+
+div.rowRolesProveedor {
+	clear: both;
+	margin: 10px 85px;
+	overflow: hidden; 
+
+}
+
+div.rowRoles p {
+	float: left;
+	margin: 5px 1px 5px 0;
+
+	
+}
+
+div.rowRoles label.titulo{
+	font-weight: bold;
+	
+}
+
+div.rowRoles table#listaCheck{
+	
+	margin: 15px;
+}
+
+div.rowRoles img{
+	margin-left: 5px;
+}
+
+div.rowRoles input{
+	margin-left: 20px;
+}
+
+div.rowRoles p.tercio {
+	width: 29%;
+
+}
+div.rowRoles p.etiqueta {
+	width: 8%;
+
+}
+/**
+	Estilos para el Panel del Arbol de Permisos Delegados
+**/
+
+div.permisosDelegados {
+	clear: both;
+	margin: 40px 40px;
+	overflow: hidden;
+
+}
+
+.arbolDelegado {
+	margin: 40px 75px;
+}
+
+/****
+	Tablas de los listados
+*/
+
+.tablaListado table{
+
+	table-layout: fixed;  
+	
+}
+
+.tablaListado table td{
+	word-wrap  : break-word;	
+}
+
+
+
+/***********
+	Etiqueta Span con aspecto de text, para el organismo 
+
+*/
+
+p.comoText {
+  	border: 1px inset;
+    display: inline;
+    float: left;
+    height: 18px;
+    width: 300px;
+    overflow: hidden;
+}
+
+span.comoText {
+  	border: 1px inset;
+    display: inline;
+    float: left;
+    height: 18px;
+    width: 300px;
+    overflow: hidden;
+}
+
+label.comoText {
+  	border: 1px inset;
+    display: inline;
+    float: left;
+    height: 18px;
+    width: 300px;
+    overflow: hidden;
+}
+
+label.comoTextGrande {
+  	border: 1px inset;
+    display: inline;
+    float: left;
+    height: 18px;
+    width: 900px;
+    overflow: hidden;
+}
+
+
+div.comoText {
+  	border: 1px inset;
+    display: inline;
+    float: left;
+    height: 18px;
+    width: 300px;
+    overflow: hidden;
+}
+
+img.imagenOrganismo{
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+/** Pantalla de Alerta **/
+
+div.fila p.alerta {
+
+	margin-top: 30px;
+	font-size: 110%;
+	font-weight: bold;
+	color: red;	
+	text-align:left;
+	padding-left: 30px;
+	width: 90%;
+}
+
+div.fila p.alertaRadio {
+
+	margin-left: 50px;
+	margin-top: 30px;
+	width: 100%;
+}
+
+div.fila p.alertaRadio label {
+
+	display: inline;
+}
+
+div.fila div {
+	margin-left: 100px;
+	margin-top: 30px;
+	width: 70%;
+}
+
+div.fila td label {
+
+	display: inline;
+}
+
+
+/**
+		Ventana Modal Sincronización INE
+**/
+
+.modalSincronizacionBoton {
+	
+	margin-left: 130px;
+	margin-top: 50px;
+}
+
+.modalSincronizacionTexto {
+	
+	margin-bottom:10px;
+	font-weight: bold;
+}
+
+/**************************************************************************
+		Página de Acceso a la Aplicación
+/*************************************************************************/
+/* -------------------------------------------------------------------------
+		ACCESO
+------------------------------------------------------------------------- */
+
+body#acceso_page #acceso_container {
+	width: 550px;
+}
+
+body#acceso_page #content p.bienvenido {
+	font-size: 170%;
+	font-weight: bold;
+	color: #888;
+	text-align: center;
+	margin: 40px 0;
+}
+
+body#acceso_page #content div#control_acceso {
+	height: 150px;
+	position: relative;
+	background: url("../images/escudo.png") center top no-repeat;
+}
+
+body#acceso_page #content div#control_acceso h3 {
+	font-size: 170%;
+	color: #aaa;
+	font-weight: normal;
+	font-family: "Trebuchet MS", Arial, geneva, sans-serif;
+	margin: 0;
+	position: absolute;
+	background: url("../images/bg_control_accesos.png") right top no-repeat;
+	height: 65px;
+	line-height: 60px;
+	padding-right: 60px;
+	top: 35px;
+	left: 60px;
+}
+
+body#acceso_page #content div#control_acceso p#acceso,
+body#acceso_page #content div#control_acceso p#acceso a {
+	width: 190px;
+	height: 106px;
+}
+
+body#acceso_page #content div#control_acceso p#acceso {
+	margin: 0;
+	position: absolute;
+	left: 60%;
+	top: 20px;
+}
+
+body#acceso_page #content div#control_acceso p#acceso a {
+	display: block;
+	background: url("../images/boton_acceso.png") top left no-repeat;
+	text-indent: -3000em;
+}
+
+body#acceso_page #content #ayuda {
+	padding: 10px;
+	background: #EAEBED;
+	overflow: hidden;
+}
+
+body#acceso_page #content #ayuda div {
+	float: left;
+}
+
+body#acceso_page #content #ayuda div#requisitos {
+	width: 60%;
+}
+
+body#acceso_page #content #ayuda div#como_hacerlo {
+	width: 40%;
+}
+
+body#acceso_page #content #ayuda div#requisitos2 {
+
+	width: 100%;
+
+
+}
+
+body#acceso_page #content #ayuda div h3 {
+	text-transform: uppercase;
+	padding: 0 0 0 20px;
+	color: #000;
+	background: url("../images/flecha.png") top left no-repeat;
+}
+
+body#acceso_page #content #ayuda div ul li {
+	margin: 20px 0;
+}
+
+body#acceso_page #content #ayuda div ul li ul {
+	margin: 10px 0 0 0;
+}
+
+body#acceso_page #content #ayuda div ul li li {
+	margin: 0;
+	list-style-type: none;
+}
+
+body#acceso_page #content #ayuda div#como_hacerlo p {
+	text-align: justify;
+	margin: 20px 0;
+}
+
+body#acceso_page #content #ayuda div#como_hacerlo p.nota {
+	color: #555;
+	margin: 20px 10px;
+	text-align: center;
+}
+
+body#acceso_page #content #ayuda div#como_hacerlo p.nota a {
+	color: blue;
+	text-decoration: underline;
+}
+/* Estilos para el error */
+
+.texto_error {
+	font-family: Verdana, Tahoma, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 19px;
+	color: #952139;
+	padding:1px;
+	font-weight: bold;
+}
+
+
+.entry {
+  margin-top: 100px;
+}
+
+.bottonEntry {
+  margin-top: 30px;
+  margin-left: 100px;
+}
+
+/*  Estilos Exportadores*/
+
+.estiloLinkExportador {
+	
+	border: 0pt none; 
+	vertical-align: top; 
+	margin-left: 5px;
+
+}
+
+.ui-datepicker-trigger{
+		vertical-align: bottom; 
+}
+
+.enlaceExportacionTabla{
+	font-size: 11px;
+	font-weight: bold;
+}
+
+div.izq{
+	display:inline;
+	float:left;
+	text-align: center;
+	width: 50%;
+	
+	
+}
+div.der{
+	display:inline;
+	float: right;
+	text-align: center;
+	width: 50%;
+	
+}
+
+
+.buttonResponsable {
+	-moz-box-shadow:inset -16px 1px 0px -17px #ffffff;
+	-webkit-box-shadow:inset -16px 1px 0px -17px #ffffff;
+	box-shadow:inset -16px 1px 0px -17px #ffffff;
+	background-color:transparent;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#695b69;
+	font-family:arial;
+	font-size:10px;
+	font-weight:bold;
+	padding:6px 8px;
+	text-decoration:none;
+	text-shadow:1px 1px 13px #ffffff;
+}
+
+.buttonResponsableTabla {
+	style:width: 1.6em;
+	height: 1.6em;
+	display:inline-block;
+}
+
+
+.buttonResponsable:active {
+	position:relative;
+	top:1px;
+}
+
+
+.filaSeleccionada{
+	
+    background-color: #C4C4C4 !important;
+    background-image: none !important;
+    color: black !important;
+}
+
+.filaSeleccionadaBoton{
+	
+    background-color: #C4C4C4 !important;
+    background-image: none !important;
+    color: black !important;
+    word-wrap: normal;
+     
+}
+
+.filaNoSeleccionadaBoton{
+	word-wrap: normal;
+}
+
+.filaNoSeleccionada .filaNoEliminada{
+
+}
+
+.filaEliminada{
+	
+    /*background-color: #C4C4C4 !important;*/
+    background-image: none !important;
+    color: red !important;
+}
+
+
+div.botonesTabla {
+    width: 100%;
+    display: compact;
+}
+
+
+/***** ESTILOS CATASTRO */
+
+p.lista {
+	font-weight: bold;
+	text-align: left;
+	background:#C0C0C0;
+}
+
+.results_block {
+	border: 1px solid #71828a;
+	padding: 10px;
+	margin: 0 0 20px 0;
+}
+
+.results_block dl {
+	margin: 10px 0;
+}
+
+.results_block dl dt {
+	font-weight: bold;
+	float: left;
+	clear: left;
+	margin: 0 0 5px 0;
+	width: 25%;
+	min-height: 30px;
+}
+
+.results_block dl dd {
+	margin: 0 0 5px 0;
+	min-height: 30px;
+}
+
+.results_block dl.col {
+	width: 49%;
+}
+
+.results_block dl.col_left {
+	float: left;
+	width: 45%;
+}
+
+.results_block dl.col_right {
+	float: right;
+	width: 55%;
+}
+
+.results_block dl.col_total {
+	float: right;
+	width: 100%;
+}
+
+.results_block dl.col dt {
+	width: 49%;
+}
+
+.results_block dl.col_left dt {
+	width: 36%;
+}
+
+.results_block dl.col_left dd {
+	width: 64%;
+}
+
+.results_block dl.col_right dt {
+	width: 36%;
+}
+
+.results_block dl.col_right dd {
+	width: 64%;
+}
+
+.results_block dl.col dd {
+	float: left;
+	width: 49%;
+}
+
+.results_block dl.col_total dt {
+	width: 17%;
+}
+
+.results_block dl.col_total dd {
+	float: left;
+	width: 82%;
+}
+
+.clearfix {
+	overflow: hidden;
+}
+
+/* Boton con link*/
+
+.enlaceBoton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #ffffff;
+}.enlaceBoton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+}.enlaceBoton:active {
+	position:relative;
+	top:1px;
+}
+
+
+/* Estilos consulta Servicios*/
+
+div.resultadoConsulta {
+		width: 100%;
+		clear: both;
+    	overflow: hidden;
+    	margin: 0;
+}
+
+div.resultadoConsulta p{
+	
+	width: 100%;
+}
+
+div.resultadoConsulta  h3{
+	margin-left: 200px;
+}
+
+
+h4.cabeceraTitulos {
+	border: 1px thin red;
+	background: #C4C4C4;
+	height:20px;
+	
+}
+
+h4.cabeceraTitulos span{
+	border: 1px thin green;
+}
+
+/* TABLAS */
+td.centrado {
+    text-align: center;
+}
+
+/* Proteccion de Datos*/
+ol#normas li {
+    margin: 15px 0;
+}
+
+h3.importante {
+    color: red;
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:oxm="http://www.springframework.org/schema/oxm"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd		
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd
+		http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm-3.0.xsd"
+		>
+
+	<context:annotation-config/>
+
+	<!-- Ficheros Properties  -->
+	<context:property-placeholder location="classpath:prueba.properties"/>
+	
+	<!-- Plantilla Transformacion -->
+	
+	<bean id="plantillaXSLtnu" class="org.springframework.core.io.ClassPathResource">
+		<constructor-arg name="path" value="plantillas/xsl/plantilla_sctnu.xsl"></constructor-arg>
+	</bean>	
+	
+	<bean id="plantillaXSLPdftnu" class="org.springframework.core.io.ClassPathResource">
+		<constructor-arg name="path" value="plantillas/xsl/plantilla_generica_pdf.xslt"></constructor-arg>
+	</bean>
+	
+	<bean id="plantillaXSLvdr" class="org.springframework.core.io.ClassPathResource">
+		<constructor-arg name="path" value="plantillas/xsl/plantilla_svdr.xsl"></constructor-arg>
+	</bean>	
+	
+	<bean id="plantillaXSLPdfvdr" class="org.springframework.core.io.ClassPathResource">
+		<constructor-arg name="path" value="plantillas/xsl/plantilla_svdr_pdf.xslt"></constructor-arg>
+	</bean>	
+	
+	<!-- XML Resultados -->
+	<bean id="ficheroXmltnu" class="org.springframework.core.io.ClassPathResource">
+		<constructor-arg name="path" value="respuestaTitulos.xml"></constructor-arg>
+	</bean>			
+	
+	<bean id="ficheroXmlvdr" class="org.springframework.core.io.ClassPathResource">
+		<constructor-arg name="path" value="respuestaResidencia.xml"></constructor-arg>
+	</bean>	
+		
+	<bean id="transformacionService" class="com.mpr.pruebas.TransformacionService"></bean>
+
+	<!-- Logging LOG4j-->
+
+	<bean id="log4jInitializer"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="staticMethod"
+			value="org.springframework.util.Log4jConfigurer.initLogging" />
+		<property name="arguments">
+			<list>
+				<value>classpath:log4j.properties</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

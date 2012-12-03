@@ -1,0 +1,272 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>transformaciones</groupId>
+	<artifactId>transformaciones</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>3.0.5.RELEASE</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>3.0.5.RELEASE</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.0.5.RELEASE</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.5</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>2.8.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>xalan</groupId>
+			<artifactId>xalan</artifactId>
+			<version>2.7.1</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.saxon</groupId>
+			<artifactId>saxon</artifactId>
+			<version>9.1.0.8</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sourceforge.saxon</groupId>
+			<artifactId>saxon-dom</artifactId>
+			<version>9.1.0.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.8.3</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.xmlgraphics</groupId>
+			<artifactId>fop</artifactId>
+			<version>0.95</version>
+			<scope>compile</scope>
+			<exclusions>
+				<exclusion>
+					<artifactId>xalan</artifactId>
+					<groupId>xalan</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.junit</groupId>
+			<artifactId>com.springsource.org.junit</artifactId>
+			<version>4.7.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>org.springframework.test</artifactId>
+			<version>3.0.5.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<repositories>
+
+		<repository>
+			<id>artefactos.scae.redsara.es</id>
+			<name>artefactos.scae.redsara.es-releases</name>
+			<url>http://artefactos.scae.redsara.es/artifactory/INTERMEDIACION_FUJITSU-release/</url>
+		</repository>
+		<repository>
+			<id>artefactos.scae.redsara.es.snapshot</id>
+			<name>artefactos.scae.redsara.es-snapshots</name>
+			<url>http://artefactos.scae.redsara.es/artifactory/INTERMEDIACION_FUJITSU-snapshot/</url>
+		</repository>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>http://repo.maven.apache.org/maven2</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<releases>
+				<updatePolicy>never</updatePolicy>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>http://repo.maven.apache.org/maven2</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<build>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<version>1.3</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>2.2-beta-5</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>2.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.0</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>install</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<executions>
+					<execution>
+						<id>default-testCompile</id>
+						<phase>test-compile</phase>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+						<configuration>
+							<source>1.6</source>
+							<target>1.6</target>
+						</configuration>
+					</execution>
+					<execution>
+						<id>default-compile</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<source>1.6</source>
+							<target>1.6</target>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+
+
+          <plugin>  
+                <groupId>org.apache.maven.plugins</groupId>  
+                <artifactId>maven-jar-plugin</artifactId>  
+                <configuration>  
+                    <archive>  
+                        <manifest>  
+                            <!-- El punto de entrada a mi aplicación de escritorio -->  
+                            <mainClass>com.mpr.pruebas.LanzaTransformaciones</mainClass>  
+  
+                            <!--  
+                                Le digo que me añada al MANIFEST la propiedad ClassPath con  
+                                todos los jars que necesito  
+                            -->  
+                            <addClasspath>true</addClasspath>  
+  
+                            <!--  
+                                A cada uno de los jars le pongo el prefijo lib, pues los  
+                                guardaré a ese directorio  
+                            -->  
+                            <classpathPrefix>lib</classpathPrefix>  
+                        </manifest>  
+  
+                        <!--  
+                            Le digo que me añada estas propiedades al MANIFEST (Puedes añadir  
+                            las que desees) pongo estas a modo de ejemplo  
+                        -->  
+                        <manifestEntries>  
+                            <Autor>Jorge Pacheco</Autor>  
+                            <Empresa>Fujitsu</Empresa>  
+                            <url>http://www.svd.com</url>
+                              <!-- además de los nombres de las dependencias, agregar el directorio config al classpath del Manifest -->
+							<Class-Path>.</Class-Path>
+                        </manifestEntries>  
+                    </archive>  
+               	<excludes>
+                    <exclude>*.properties</exclude>
+                    <exclude>*.xml</exclude>
+					<exclude>plantillas/**</exclude>  
+					<exclude>config/**</exclude>                   
+                </excludes>
+                </configuration>  
+            </plugin>  
+
+
+        <!-- configuración del plugin de empaquetado -->  
+         <plugin>  
+            <artifactId>maven-assembly-plugin</artifactId>  
+            <configuration>  
+            <descriptors>  
+               <!-- ruta al descriptor del empaquetado: por convención se incluye en el directorio assembly -->  
+               <descriptor>src/main/assembly/installer.xml</descriptor>  
+            </descriptors>  
+            </configuration>  
+            <!-- enganchamos la ejecución del plugin al ciclo de vida de maven, en concreto a la fase de instalación  
+            de este modo al instalar el artefacto generará nuestro distribuible del módulo batch -->  
+            <executions>  
+               <execution>  
+                  <id>package-native</id>  
+                  <phase>package</phase>  
+                  <goals>  
+                     <goal>attached</goal>  
+                  </goals>  
+              </execution>  
+            </executions>  
+         </plugin>  
+
+		</plugins>
+	</build>
+</project>

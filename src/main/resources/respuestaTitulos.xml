@@ -1,0 +1,80 @@
+<Respuesta xmlns="http://www.map.es/scsp/esquemas/V2/respuesta">
+   <Atributos>
+      <IdPeticion>WEBPRO0000300</IdPeticion>
+      <NumElementos>1</NumElementos>
+      <TimeStamp>2012-10-29T10:53:31.046+01:00</TimeStamp>
+      <Estado>
+         <CodigoEstado>0003</CodigoEstado>
+         <CodigoEstadoSecundario/>
+         <LiteralError>Tramitada</LiteralError>
+         <TiempoEstimadoRespuesta>0</TiempoEstimadoRespuesta>
+      </Estado>
+      <CodigoCertificado>SVDTNUWS01</CodigoCertificado>
+   </Atributos>
+   <Transmisiones>
+      <TransmisionDatos>
+         <DatosGenericos>
+            <Emisor>
+               <NifEmisor>S2818001F</NifEmisor>
+               <NombreEmisor>Ministerio de Hacienda y Administraciones Públicas</NombreEmisor>
+            </Emisor>
+            <Solicitante>
+               <IdentificadorSolicitante>S2811001C</IdentificadorSolicitante>
+               <NombreSolicitante>DIVISION DE PROYECTOS DE ADM.ELECTRONICA(MPTAP)</NombreSolicitante>
+               <Finalidad>Pruebas jose</Finalidad>
+               <Consentimiento>Ley</Consentimiento>
+            </Solicitante>
+            <Titular>
+               <TipoDocumentacion>NIF</TipoDocumentacion>
+               <Documentacion>02639958H</Documentacion>
+            </Titular>
+            <Transmision>
+               <CodigoCertificado>SVDTNUWS01</CodigoCertificado>
+               <IdSolicitud>WEBPRO0000300</IdSolicitud>
+               <IdTransmision>WEBPRO0000300000000000001</IdTransmision>
+               <FechaGeneracion>2012-10-29T10:53:31.038+01:00</FechaGeneracion>
+            </Transmision>
+         </DatosGenericos>
+         <ns1:DatosEspecificos xmlns:ns1="http://www.map.es/scsp/esquemas/datosespecificos">
+            <ns1:EstadoResultado>
+               <ns1:CodigoEstado>0003</ns1:CodigoEstado>
+               <ns1:LiteralError>TRAMITADA</ns1:LiteralError>
+            </ns1:EstadoResultado>
+            <ns1:DatosTitular>
+               <ns1:LugarNacimiento>
+                  <ns1:Pais>ESPAÑA</ns1:Pais>
+                  <ns1:Provincia>MADRID</ns1:Provincia>
+                  <ns1:Localidad>MADRID</ns1:Localidad>
+               </ns1:LugarNacimiento>
+               <ns1:FechaNacimiento>01/12/1973</ns1:FechaNacimiento>
+            </ns1:DatosTitular>
+            <ns1:ListaTitulos>
+               <ns1:DatosTitulacion>
+                  <ns1:DatosCentro>
+                     <ns1:Centro>ISIDRA DE GUZMÁN</ns1:Centro>
+                     <ns1:CodCentro>28038835</ns1:CodCentro>
+                     <ns1:Provincia>MADRID</ns1:Provincia>
+                  </ns1:DatosCentro>
+                  <ns1:DatosTitulo>
+                     <ns1:Titulacion>Bachillerato</ns1:Titulacion>
+                     <ns1:TipoTitulo>TITULO</ns1:TipoTitulo>
+                     <ns1:TipoEstudio>LGE</ns1:TipoEstudio>
+                     <ns1:Nivel>Bachillerato LGE</ns1:Nivel>
+                     <ns1:Ley>LGE</ns1:Ley>
+                     <ns1:FechaFinalizacion>1994</ns1:FechaFinalizacion>
+                     <ns1:FechaExpedicion>06/10/1995</ns1:FechaExpedicion>
+                     <ns1:NumRegistroNacional>002893096742</ns1:NumRegistroNacional>
+                     <ns1:NumRegistroAutonomico>A</ns1:NumRegistroAutonomico>
+                     <ns1:NumRegistroMec>R</ns1:NumRegistroMec>
+                     <ns1:Registro>
+                        <ns1:NumOrdenLibro>096742</ns1:NumOrdenLibro>
+                        <ns1:NumLibro>000047</ns1:NumLibro>
+                        <ns1:NumFolio>0249</ns1:NumFolio>
+                     </ns1:Registro>
+                  </ns1:DatosTitulo>
+               </ns1:DatosTitulacion>
+            </ns1:ListaTitulos>
+         </ns1:DatosEspecificos>
+      </TransmisionDatos>
+   </Transmisiones>
+</Respuesta>
